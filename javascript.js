@@ -25,3 +25,11 @@ boxes.forEach(box => box.addEventListener('mouseover', updateBackgroundColor))
 function updateBackgroundColor(e) {
     e.target.style.backgroundColor = 'black'
 }
+
+let button = document.querySelector('button')
+button.addEventListener('click', () => {
+    let input;
+    do {
+        input = prompt('Enter a grid size (max: 100)')
+    } while (input > 100);
+})

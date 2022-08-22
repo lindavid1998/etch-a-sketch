@@ -5,10 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch Demo</title>
-    <style></style>
+    <style>
+        .contents {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            padding: 30px;
+            margin: 10px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container"></div>
+    <div class="contents">
+        <button class="button">Set grid size</button>
+        <div class="container"></div>
+    </div>
+    
     <script src="javascript.js"></script>
 </body>
 </html>
