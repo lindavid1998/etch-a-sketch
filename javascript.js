@@ -40,7 +40,10 @@ boxes.forEach(box => box.addEventListener('mouseover', updateBackgroundColor))
 
 let clearButton = document.querySelector('.clear')
 clearButton.addEventListener('click', () => {
-    boxes.forEach(box => box.style.backgroundColor = '')
+    boxes.forEach(box => {
+        box.style.backgroundColor = ''
+        box.style.opacity = '1'
+    })
 })
 
 let button = document.querySelector('.set-size')
