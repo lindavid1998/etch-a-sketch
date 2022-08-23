@@ -7,10 +7,10 @@ function createGrid(dim = 16) {
         for (let j = 0; j < dim; j++) {
             let div = document.createElement('div')
             div.className = 'box'
-            div.style.cssText = 'flex: none; width: 50px; height: 50px; border: 1px solid black; padding: 2px;'
+            div.style.cssText = 'flex: 1 1 0; border: 1px solid black; padding: 2px;'
             row.appendChild(div)
         }
-        row.style.cssText = 'display: flex; gap: 3px; justify-content: center;'
+        row.style.cssText = 'display: flex; gap: 2px; justify-content: center; flex: 1 1 0;'
         container.appendChild(row)
     }
     container.style.cssText = 'display: flex; flex-direction: column; gap: 5px;'
