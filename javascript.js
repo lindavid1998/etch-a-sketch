@@ -17,8 +17,19 @@ function createGrid(dim = 16) {
 }
 
 function updateBackgroundColor(e) {
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    e.target.style.backgroundColor = '#' + randomColor;
+    // let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    // e.target.style.backgroundColor = '#' + randomColor;
+    
+    // if background color is blank, initialize as 90% transparent black
+    if (e.target.style.backgroundColor === '') {
+        e.target.style.opacity = '0.1'
+        e.target.style.backgroundColor = 'black'
+        // e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'
+    } else { // otherwise, increase opacity by 0.1        
+        let newOpacity = Number(e.target.style.opacity) + 0.1 
+        e.target.style.opacity = `${newOpacity}`
+    }
+
     // e.target.style.backgroundColor = 'black'
 }
 
