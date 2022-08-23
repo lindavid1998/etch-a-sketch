@@ -32,3 +32,9 @@ button.addEventListener('click', () => {
         input = prompt('Enter a grid size (max: 100)')
     } while (input > 100);
 })
+
+
+let clearButton = document.querySelector('.clear')
+clearButton.addEventListener('click', () => {
+    boxes.forEach(box => box.style.backgroundColor = '')
+})
