@@ -19,14 +19,13 @@ function createGrid() {
 createGrid()
 
 let boxes = document.querySelectorAll('.box')
-
 boxes.forEach(box => box.addEventListener('mouseover', updateBackgroundColor))
 
 function updateBackgroundColor(e) {
     e.target.style.backgroundColor = 'black'
 }
 
-let button = document.querySelector('button')
+let button = document.querySelector('.set-size')
 button.addEventListener('click', () => {
     let input;
     do {
