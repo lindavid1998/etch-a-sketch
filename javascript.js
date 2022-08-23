@@ -27,38 +27,35 @@ function updateBackgroundColor(e) {
     }
 }
 
-createGrid()
-
-let boxes = document.querySelectorAll('.box')
-boxes.forEach(box => box.addEventListener('mouseover', updateBackgroundColor))
-
-let clearButton = document.querySelector('.clear')
-clearButton.addEventListener('click', () => {
+function clearGrid() {
     boxes.forEach(box => {
         box.style.backgroundColor = ''
         box.style.opacity = '1'
     })
-})
+}
 
-let button = document.querySelector('.set-size')
-button.addEventListener('click', () => {
+function changeGridSize() {
     let input;
     do {
         input = prompt('Enter a grid size (max: 100)')
     } while (input > 100);
 
-    // remove all existing boxes
-    // boxes.forEach(box => box.remove());
     let container = document.querySelector('.container')
     while (container.firstChild) {
         container.removeChild(container.firstChild)
     }
 
-    // create new grid using input
     createGrid(input);
-
-    // add mouseover event listener to each box on new grid
     boxes = document.querySelectorAll('.box')
     boxes.forEach(box => box.addEventListener('mouseover', updateBackgroundColor))
+}
 
-})
+createGrid()
+
+let boxes = document.querySelectorAll('.box')
+let clearButton = document.querySelector('.clear')
+let button = document.querySelector('.set-size')
+
+boxes.forEach(box => box.addEventListener('mouseover', updateBackgroundColor))
+clearButton.addEventListener('click', clearGrid)
+button.addEventListener('click', changeGridSize)
